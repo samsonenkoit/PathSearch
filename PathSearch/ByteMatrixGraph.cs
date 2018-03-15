@@ -36,9 +36,9 @@ namespace PathSearch
 
         public override bool Equals(object obj)
         {
-            if (obj == null || GetType() != obj.GetType())
+            if (!(obj is Point))
                 return false;
-            
+
             Point p = (Point)obj;
             return Equals(p);
 
