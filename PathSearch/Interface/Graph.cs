@@ -8,6 +8,11 @@ namespace PathSearch.Interface
 {
     public abstract class Graph<T>
     {
+        /// <summary>
+        /// Возвращает список графов, соединенных с данным
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public abstract IEnumerable<T> GetConnected(T node);
     }
 }

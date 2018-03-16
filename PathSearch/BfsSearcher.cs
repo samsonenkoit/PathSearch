@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PathSearch
 {
+    /// <summary>
+    /// Реализаци алгоритма поиска в ширину
+    /// </summary>
     public class BfsSearcher : IPathSearcher
     {
         private class PathItem<T>
@@ -27,6 +30,14 @@ namespace PathSearch
             }
         }
 
+        /// <summary>
+        /// Возвращает кратчайший путь
+        /// </summary>
+        /// <typeparam name="T">Тип узла графа. Важно что бы T корректно реализовывал Equalse и GetHashCode</typeparam>
+        /// <param name="graph"></param>
+        /// <param name="startNode"></param>
+        /// <param name="endNode"></param>
+        /// <returns></returns>
         public IEnumerable<T> Search<T>(Graph<T> graph, T startNode, T endNode)
         {
             if (graph == null)

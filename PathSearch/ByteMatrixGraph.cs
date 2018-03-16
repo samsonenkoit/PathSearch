@@ -44,7 +44,13 @@ namespace PathSearch
 
         }
     }
-
+    
+    /// <summary>
+    /// Граф задается байтовой матрицей. Каждый элемент матрицы - узел графа. Узел N1 
+    /// считается связанным с N2 если выполняются условия:
+    /// 1) N2.Row == N1.Row +- 1 либо N2.Column == N1.Column +- 1
+    /// 2) N2 имеет значение 0
+    /// </summary>
     public class ByteMatrixGraph : Graph<Point>
     {
         private readonly byte[,] _m;

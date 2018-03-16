@@ -38,15 +38,20 @@ namespace PathSearchExample
             var rowsCount = m.GetLength(0);
             var columnsCount = m.GetLength(1);
 
-            for(int row = 0; row < rowsCount; row++)
+            for (int row = 0; row < rowsCount; row++)
             {
-                for(int column = 0; column < columnsCount; column++)
+                for (int column = 0; column < columnsCount; column++)
                 {
                     if (path.Any(t => t.Row == row && t.Column == column))
-                        Console.Write("x");
+                    {
+                        var color = Console.ForegroundColor;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write(" x");
+                        Console.ForegroundColor = color;
+                    }
                     else
                     {
-                        Console.Write(m[row, column]);
+                        Console.Write(" " + m[row, column]);
                     }
                 }
                 Console.WriteLine();
